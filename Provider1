@@ -1,0 +1,11 @@
+# Provider File AWS
+
+
+
+
+provider "aws" {
+    version = "5.80.0"
+    access_key = ""
+    secret_key = ""
+    region = "us-east-1"
+}
