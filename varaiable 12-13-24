@@ -1,0 +1,31 @@
+provider "aws" {
+    aws_key =""
+    secret_key =""
+    region =""
+}
+
+resource "aws_instance" "FirstInstance" {
+    aims ="lookup(var.AIMS, var.AWS_REGION)"
+    type = ""
+    security_groups ="var.Security_group"
+}
+    tag = {
+        Name ="Instane1"
+    }
+
+variable "AIMS"{
+    type = map(string)
+    default = {
+        "region1" = "aims1"
+        "region2" = "aims2"
+    }
+}
+
+variable "Security_group"{
+    type = list(string)
+    default = ["sg-001","sg-002"]
+}
+
+variable "AWS_KEY" {}
+variable "AWS_SECRET_KEY" {}
+
